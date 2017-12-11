@@ -1,6 +1,6 @@
 {
   "name": "brain-games-greybutton",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Hexlet project #1",
   "main": "index.js",
   "bin": {
@@ -28,5 +28,7 @@
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*"
   },
-  "dependencies": {}
+  "dependencies": {
+    "readline-sync": "^1.4.7"
+  }
 }
