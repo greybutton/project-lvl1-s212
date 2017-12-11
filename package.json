@@ -1,0 +1,32 @@
+{
+  "name": "brain-games-greybutton",
+  "version": "1.0.2",
+  "description": "Hexlet project #1",
+  "main": "index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "scripts": {
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greybutton/project-lvl1-s212.git"
+  },
+  "author": "Sergej Tabb <greybutton@yandex.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greybutton/project-lvl1-s212/issues"
+  },
+  "homepage": "https://github.com/greybutton/project-lvl1-s212#readme",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*"
+  },
+  "dependencies": {}
+}
