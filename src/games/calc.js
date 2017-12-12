@@ -1,61 +1,47 @@
-import readlineSync from 'readline-sync';
+import braingames from '..';
 
-const calc = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('What is the result of the expression?');
-  console.log('');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log('Hello,', userName);
-  console.log('');
+braingames.hello('What is the result of the expression?');
+braingames.getUserName();
 
-  const min = 0;
-  const max = 100;
-  const randomNumber = () => Math.floor(Math.random() * ((max - min) + 1)) + min;
-  const questionAmount = 3;
-  const fail = () => {
-    console.log(`Let's try again, ${userName}!`);
+const questions = () => {
+  const iter = (index) => {
+    if (index === braingames.questionAmount) {
+      braingames.congrats();
+      return;
+    }
+    const numberFirst = braingames.randomNumber();
+    const numberSecond = braingames.randomNumber();
+    let operation;
+    let answer;
+    switch (index) {
+      case 0: {
+        operation = '+';
+        answer = numberFirst + numberSecond;
+        break;
+      }
+      case 1: {
+        operation = '-';
+        answer = numberFirst - numberSecond;
+        break;
+      }
+      case 2: {
+        operation = '*';
+        answer = numberFirst * numberSecond;
+        break;
+      }
+      default: break;
+    }
+    braingames.question(`Question: ${numberFirst} ${operation} ${numberSecond}`);
+    const userAnswer = braingames.getAnswer();
+    if (Number(userAnswer) === answer) {
+      braingames.correctAnswer();
+      iter(index + 1);
+    } else {
+      braingames.wrongAnswer(userAnswer, answer);
+      braingames.fail();
+    }
   };
-  const questions = () => {
-    const iter = (index) => {
-      if (index === questionAmount) {
-        console.log(`Congratulations, ${userName}!`);
-        return;
-      }
-      const numberFirst = randomNumber();
-      const numberSecond = randomNumber();
-      let operation;
-      let answer;
-      switch (index) {
-        case 0: {
-          operation = '+';
-          answer = numberFirst + numberSecond;
-          break;
-        }
-        case 1: {
-          operation = '-';
-          answer = numberFirst - numberSecond;
-          break;
-        }
-        case 2: {
-          operation = '*';
-          answer = numberFirst * numberSecond;
-          break;
-        }
-        default: break;
-      }
-      console.log(`Question: ${numberFirst} ${operation} ${numberSecond}`);
-      const userAnswer = readlineSync.question('Your answer: ');
-      if (Number(userAnswer) === answer) {
-        console.log('Correct!');
-        iter(index + 1);
-      } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-        fail();
-      }
-    };
-    return iter(0);
-  };
-  questions();
+  return iter(0);
 };
 
-export default calc;
+export default questions;

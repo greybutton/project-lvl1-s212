@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import braingames from '..';
+import games from '../games/games';
 
-braingames.hello();
+games;

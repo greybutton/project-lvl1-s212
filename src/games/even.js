@@ -1,41 +1,27 @@
-import readlineSync from 'readline-sync';
+import braingames from '..';
 
-const even = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
-  console.log('');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log('Hello,', userName);
-  console.log('');
+braingames.hello('Answer "yes" if number even otherwise answer "no".');
+braingames.getUserName();
 
-  const min = 0;
-  const max = 100;
-  const randomNumber = () => Math.floor(Math.random() * ((max - min) + 1)) + min;
-  const questionAmount = 3;
-  const fail = () => {
-    console.log(`Let's try again, ${userName}!`);
+const questions = () => {
+  const iter = (index) => {
+    if (index === braingames.questionAmount) {
+      braingames.congrats();
+      return;
+    }
+    const number = braingames.randomNumber();
+    const answer = number % 2 === 0 ? 'yes' : 'no';
+    braingames.question(`Question: ${number}`);
+    const userAnswer = braingames.getAnswer();
+    if (userAnswer === answer) {
+      braingames.correctAnswer();
+      iter(index + 1);
+    } else {
+      braingames.wrongAnswer(userAnswer, answer);
+      braingames.fail();
+    }
   };
-  const questions = () => {
-    const iter = (index) => {
-      if (index === questionAmount) {
-        console.log(`Congratulations, ${userName}!`);
-        return;
-      }
-      const number = randomNumber();
-      const answer = number % 2 === 0 ? 'yes' : 'no';
-      console.log(`Question: ${number}`);
-      const userAnswer = readlineSync.question('Your answer: ');
-      if (userAnswer === answer) {
-        console.log('Correct!');
-        iter(index + 1);
-      } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-        fail();
-      }
-    };
-    return iter(0);
-  };
-  questions();
+  return iter(0);
 };
 
-export default even;
+export default questions;
