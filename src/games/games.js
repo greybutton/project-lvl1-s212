@@ -1,4 +1,4 @@
 import braingames from '..';
 
-braingames.hello();
-braingames.getUserName();
+export default braingames;
+

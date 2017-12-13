@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import questions from '../games/even';
+import even from '../games/even';
 
-questions();
+even();
