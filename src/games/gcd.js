@@ -7,10 +7,10 @@ const gcd = () =>
       const numberFirst = Math.floor(Math.random() * ((10 - 0) + 1)) + 0;
       const numberSecond = Math.floor(Math.random() * ((10 - 0) + 1)) + 0;
       const euclid = (a, b) => {
-        const r = a % b;
-        if (r === 0) {
-          return b;
+        if (b === 0) {
+          return a;
         }
+        const r = a % b;
         return euclid(b, r);
       };
       const answer = euclid(numberFirst, numberSecond);
