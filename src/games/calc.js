@@ -10,19 +10,19 @@ const calc = () =>
       let question;
       let answer;
       switch (index) {
-        case 0: {
-          question = `${numberFirst} + ${numberSecond}`;
-          answer = numberFirst + numberSecond;
-          break;
-        }
         case 1: {
-          question = `${numberFirst} - ${numberSecond}`;
-          answer = numberFirst - numberSecond;
+          question = `${numberFirst} + ${numberSecond}`;
+          answer = `${numberFirst + numberSecond}`;
           break;
         }
         case 2: {
+          question = `${numberFirst} - ${numberSecond}`;
+          answer = `${numberFirst - numberSecond}`;
+          break;
+        }
+        case 3: {
           question = `${numberFirst} * ${numberSecond}`;
-          answer = numberFirst * numberSecond;
+          answer = `${numberFirst * numberSecond}`;
           break;
         }
         default: break;
