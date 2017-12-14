@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const braingames = ({ description, logic }) => {
+const gameplay = ({ description, logic }) => {
   console.log('Welcome to the Brain Games!');
   if (description) {
     console.log(description);
@@ -40,4 +40,4 @@ const braingames = ({ description, logic }) => {
   }
 };
 
-export default braingames;
+export default gameplay;
