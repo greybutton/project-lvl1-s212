@@ -2,7 +2,7 @@ import gameplay from '..';
 
 const description = 'What is the result of the expression?';
 
-const logic = () => {
+const setQandA = () => {
   const numberFirst = Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
   const numberSecond = Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
   const index = Math.floor(Math.random() * ((3 - 1) + 1)) + 1;
@@ -32,6 +32,6 @@ const logic = () => {
   };
 };
 
-const game = () => gameplay({ description, logic });
+const play = () => gameplay({ description, setQandA });
 
-export default game;
+export default play;

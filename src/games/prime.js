@@ -23,7 +23,7 @@ const isPrime = (num) => {
   return iter(start);
 };
 
-const logic = () => {
+const setQandA = () => {
   const randomNumber = Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
   const answer = isPrime(randomNumber);
   return {
@@ -32,6 +32,6 @@ const logic = () => {
   };
 };
 
-const game = () => gameplay({ description, logic });
+const play = () => gameplay({ description, setQandA });
 
-export default game;
+export default play;

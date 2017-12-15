@@ -10,7 +10,7 @@ const gcd = (a, b) => {
   return gcd(b, r);
 };
 
-const logic = () => {
+const setQandA = () => {
   const numberFirst = Math.floor(Math.random() * ((10 - 0) + 1)) + 0;
   const numberSecond = Math.floor(Math.random() * ((10 - 0) + 1)) + 0;
   const answer = gcd(numberFirst, numberSecond);
@@ -20,6 +20,6 @@ const logic = () => {
   };
 };
 
-const game = () => gameplay({ description, logic });
+const play = () => gameplay({ description, setQandA });
 
-export default game;
+export default play;

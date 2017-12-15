@@ -23,7 +23,7 @@ const checkBalance = (num) => {
   return num;
 };
 
-const logic = () => {
+const setQandA = () => {
   const number = Math.floor(Math.random() * ((1000 - 100) + 1)) + 100;
   const answer = checkBalance(number);
   return {
@@ -32,6 +32,6 @@ const logic = () => {
   };
 };
 
-const game = () => gameplay({ description, logic });
+const play = () => gameplay({ description, setQandA });
 
-export default game;
+export default play;

@@ -5,7 +5,7 @@ const description = 'What number is missing in this progression?';
 const progressionLength = 10;
 const randomNumber = () => Math.floor(Math.random() * ((10 - 0) + 1)) + 0;
 
-const logic = () => {
+const setQandA = () => {
   const start = randomNumber();
   const step = randomNumber();
   const gap = randomNumber();
@@ -18,6 +18,6 @@ const logic = () => {
   };
 };
 
-const game = () => gameplay({ description, logic });
+const play = () => gameplay({ description, setQandA });
 
-export default game;
+export default play;

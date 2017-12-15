@@ -2,7 +2,7 @@ import gameplay from '..';
 
 const description = 'Answer "yes" if number even otherwise answer "no".';
 
-const logic = () => {
+const setQandA = () => {
   const number = Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
   const answer = number % 2 === 0 ? 'yes' : 'no';
   return {
@@ -11,6 +11,6 @@ const logic = () => {
   };
 };
 
-const game = () => gameplay({ description, logic });
+const play = () => gameplay({ description, setQandA });
 
-export default game;
+export default play;
