@@ -10,9 +10,11 @@ const gcd = (a, b) => {
   return gcd(b, r);
 };
 
-const setQandA = () => {
-  const numberFirst = Math.floor(Math.random() * ((10 - 0) + 1)) + 0;
-  const numberSecond = Math.floor(Math.random() * ((10 - 0) + 1)) + 0;
+const randomNumber = () => Math.floor(Math.random() * ((10 - 0) + 1)) + 0;
+
+const generateQandA = () => {
+  const numberFirst = randomNumber();
+  const numberSecond = randomNumber();
   const answer = gcd(numberFirst, numberSecond);
   return {
     question: `${numberFirst} ${numberSecond}`,
@@ -20,6 +22,6 @@ const setQandA = () => {
   };
 };
 
-const play = () => gameplay({ description, setQandA });
+const play = () => gameplay(description, generateQandA);
 
 export default play;

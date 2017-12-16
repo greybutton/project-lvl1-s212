@@ -2,9 +2,11 @@ import gameplay from '..';
 
 const description = 'What is the result of the expression?';
 
-const setQandA = () => {
-  const numberFirst = Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
-  const numberSecond = Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
+const randomNumber = () => Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
+
+const generateQandA = () => {
+  const numberFirst = randomNumber();
+  const numberSecond = randomNumber();
   const index = Math.floor(Math.random() * ((3 - 1) + 1)) + 1;
   let question;
   let answer;
@@ -32,6 +34,6 @@ const setQandA = () => {
   };
 };
 
-const play = () => gameplay({ description, setQandA });
+const play = () => gameplay(description, generateQandA);
 
 export default play;

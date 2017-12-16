@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const gameplay = ({ description, setQandA }) => {
+const gameplay = (description, generateQandA) => {
   console.log('Welcome to the Brain Games!');
   if (description) {
     console.log(description);
@@ -11,7 +11,7 @@ const gameplay = ({ description, setQandA }) => {
   console.log('Hello,', userName);
   console.log('');
 
-  if (setQandA) {
+  if (generateQandA) {
     const fail = () => {
       console.log(`Let's try again, ${userName}!`);
     };
@@ -23,7 +23,7 @@ const gameplay = ({ description, setQandA }) => {
           console.log(`Congratulations, ${userName}!`);
           return;
         }
-        const { question, answer } = setQandA();
+        const { question, answer } = generateQandA();
         console.log(`Question: ${question}`);
         const userAnswer = readlineSync.question('Your answer: ');
         if (userAnswer === answer) {

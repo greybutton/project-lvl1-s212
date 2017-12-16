@@ -23,15 +23,17 @@ const isPrime = (num) => {
   return iter(start);
 };
 
-const setQandA = () => {
-  const randomNumber = Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
-  const answer = isPrime(randomNumber);
+const randomNumber = () => Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
+
+const generateQandA = () => {
+  const question = randomNumber();
+  const answer = isPrime(question);
   return {
-    question: randomNumber,
+    question,
     answer: `${answer}`,
   };
 };
 
-const play = () => gameplay({ description, setQandA });
+const play = () => gameplay(description, generateQandA);
 
 export default play;
