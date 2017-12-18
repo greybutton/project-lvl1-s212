@@ -15,10 +15,10 @@ const randomNumber = () => Math.floor(Math.random() * ((10 - 0) + 1)) + 0;
 const generateQandA = () => {
   const numberFirst = randomNumber();
   const numberSecond = randomNumber();
-  const answer = gcd(numberFirst, numberSecond);
+  const answer = String(gcd(numberFirst, numberSecond));
   return {
     question: `${numberFirst} ${numberSecond}`,
-    answer: `${answer}`,
+    answer,
   };
 };
 

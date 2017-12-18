@@ -4,9 +4,17 @@ const description = 'Balance the given number.';
 
 const balance = (nums, indexMin, indexMax) => {
   const numbers = nums;
-  numbers[indexMin] += 1;
-  numbers[indexMax] -= 1;
-  const num = numbers.sort((a, b) => a - b).join('');
+  const num = numbers.map((e, i) => {
+    if (i === indexMin) {
+      return e + 1;
+    }
+    if (i === indexMax) {
+      return e - 1;
+    }
+    return e;
+  })
+    .sort((a, b) => a - b)
+    .join('');
   return num;
 };
 
@@ -27,10 +35,10 @@ const randomNumber = () => Math.floor(Math.random() * ((1000 - 100) + 1)) + 100;
 
 const generateQandA = () => {
   const question = randomNumber();
-  const answer = checkBalance(question);
+  const answer = String(checkBalance(question));
   return {
     question,
-    answer: `${answer}`,
+    answer,
   };
 };
 

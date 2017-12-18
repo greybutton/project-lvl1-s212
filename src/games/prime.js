@@ -27,10 +27,10 @@ const randomNumber = () => Math.floor(Math.random() * ((100 - 0) + 1)) + 0;
 
 const generateQandA = () => {
   const question = randomNumber();
-  const answer = isPrime(question);
+  const answer = isPrime(question) ? 'yes' : 'no';
   return {
     question,
-    answer: `${answer}`,
+    answer,
   };
 };
 
