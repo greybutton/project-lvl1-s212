@@ -1,6 +1,6 @@
 {
   "name": "brain-games-greybutton",
-  "version": "3.5.3",
+  "version": "4.0.0",
   "description": "Hexlet project #1",
   "main": "index.js",
   "bin": {
