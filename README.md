@@ -2,11 +2,15 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/d731c90a0d4c96d03662/maintainability)](https://codeclimate.com/github/greybutton/project-lvl1-s212/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d731c90a0d4c96d03662/test_coverage)](https://codeclimate.com/github/greybutton/project-lvl1-s212/test_coverage)
 
-## Install
+## Description
+
+The set of mini-games that are launched from the console.
+
+### Install
 
 `npm install -g brain-games-greybutton`
 
-## Play
+### Play
 
 Type in terminal one of these games
 
@@ -16,6 +20,8 @@ Type in terminal one of these games
 - brain-balance
 - brain-progression
 - brain-prime
+
+## Development
 
 ### Docker
 
